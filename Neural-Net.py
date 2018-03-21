@@ -64,7 +64,7 @@ for x in range(3):
 yHat = NN.forward(X)
 print("yHat is:", yHat)
 
-# Initialize actual output array Y. Could be changed to incorporate dynamic input from user.
+# Initialize actual output array Y (for test scores) to zero and obtain values from user
 Y = [[0.0], [0.0], [0.0]]
 for i in range(3):
     for j in range(1):
