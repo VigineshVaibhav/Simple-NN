@@ -64,7 +64,7 @@ for x in range(3):
 yHat = NN.forward(X)
 print("yHat is:", yHat)
 
-# Initialize actual output array Y
+# Initialize actual output array Y. Could be changed to incorporate dynamic input from user.
 Y = [[0.75], [0.82], [0.93]]
 
 # Compute cost of error with randomized weights
