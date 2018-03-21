@@ -65,7 +65,11 @@ yHat = NN.forward(X)
 print("yHat is:", yHat)
 
 # Initialize actual output array Y. Could be changed to incorporate dynamic input from user.
-Y = [[0.75], [0.82], [0.93]]
+Y = [[0.0], [0.0], [0.0]]
+for i in range(3):
+    for j in range(1):
+        print("Enter value for ", i + 1, "st test score:")
+        Y[i][j] = float(input())
 
 # Compute cost of error with randomized weights
 oldCost = NN.costFunction(X, Y)
@@ -77,8 +81,8 @@ factor = 3
 # Perform gradient descent optimization for 100 times
 for i in range(100):
     dJdW1, dJdW2 = NN.costFunctionPrime(X, Y)
-    print("dJdW1 =", dJdW1)
-    print("dJdW2 =", dJdW2)
+    # print("dJdW1 =", dJdW1)
+    # print("dJdW2 =", dJdW2)
     NN.W1 = NN.W1 - factor * dJdW1
     NN.W2 = NN.W2 - factor * dJdW2
     newCost = NN.costFunction(X, Y)
