@@ -48,22 +48,33 @@ class Neural_Network(object):
         return dJdW1, dJdW2
 
 
+# Initialize the input array for number of hours slept and studied the night before the test to zero
 X = [[0 for x in range(2)] for y in range(3)]
-
 print(X)
+
 NN = Neural_Network()
+
+# Accept the input for number of hours slept and studied
 for x in range(3):
     for y in range(2):
         print("Enter value for row ", x + 1, " and column ", y + 1, ":")
         X[x][y] = float(input())
+
+# yHat is the predicted output, without optimizing the weights of the NN
 yHat = NN.forward(X)
 print("yHat is:", yHat)
+
+# Initialize actual output array Y
 Y = [[0.75], [0.82], [0.93]]
 
+# Compute cost of error with randomized weights
 oldCost = NN.costFunction(X, Y)
 print("Old Cost is:", oldCost)
 
+# Choose an arbitrary scaling factor for gradient descent. Here, it is initialized as 3
 factor = 3
+
+# Perform gradient descent optimization for 100 times
 for i in range(100):
     dJdW1, dJdW2 = NN.costFunctionPrime(X, Y)
     print("dJdW1 =", dJdW1)
