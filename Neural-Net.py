@@ -60,7 +60,7 @@ for x in range(3):
         print("Enter value for row ", x + 1, " and column ", y + 1, ":")
         X[x][y] = float(input())
 
-# yHat is the predicted output, without optimizing the weights of the NN
+# yHat is the predicted output, without optimizing the weights of the NN (initially)
 yHat = NN.forward(X)
 print("yHat is:", yHat)
 
